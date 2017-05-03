@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.f22labs.darthensondemo"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+
+    compile 'com.android.support:appcompat-v7:25.3.1'
+
+
+
+
+    compile 'com.f2prateek.dart:dart:2.0.2'
+    annotationProcessor 'com.f2prateek.dart:dart-processor:2.0.2'
+
+
+    compile 'com.f2prateek.dart:henson:2.0.2'
+    annotationProcessor 'com.f2prateek.dart:henson-processor:2.0.2'
+
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+}
