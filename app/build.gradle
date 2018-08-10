@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.f22labs.darthensondemo"
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion 21
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -21,20 +21,13 @@ android {
 
 dependencies {
 
+    implementation 'com.android.support:appcompat-v7:27.1.1'
 
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.f2prateek.dart:dart:3.0.1'
+    annotationProcessor 'com.f2prateek.dart:dart-processor:3.0.1'
+    implementation 'com.f2prateek.dart:henson:3.0.1'
+    annotationProcessor 'com.f2prateek.dart:henson-processor:3.0.1'
 
-
-
-
-    compile 'com.f2prateek.dart:dart:2.0.2'
-    annotationProcessor 'com.f2prateek.dart:dart-processor:2.0.2'
-
-
-    compile 'com.f2prateek.dart:henson:2.0.2'
-    annotationProcessor 'com.f2prateek.dart:henson-processor:2.0.2'
-
-    compile 'com.jakewharton:butterknife:8.5.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
