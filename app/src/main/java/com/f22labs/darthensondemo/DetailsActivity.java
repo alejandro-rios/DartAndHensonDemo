@@ -1,19 +1,16 @@
 package com.f22labs.darthensondemo;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.f2prateek.dart.Dart;
-import com.f2prateek.dart.InjectExtra;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import dart.Dart;
+import dart.DartModel;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -26,13 +23,9 @@ public class DetailsActivity extends AppCompatActivity {
     @BindView(R.id.btn_click_me)
     Button btnClickMe;
 
-
-    @InjectExtra User user;
-
-    @Nullable
-    @InjectExtra String fromScreen;
-
-    @InjectExtra boolean isSuccess = false;
+    // Navigation model declaration
+    @DartModel
+    DetailsActivityNavigationModel detailsActivityNavigationModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +33,14 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
         ButterKnife.bind(this);
 
-        Dart.inject(this);
+        Dart.bind(this);
 
         updateFields();
     }
 
     private void updateFields() {
+        // Since the User model is parceable, we can get it with this
+        User user = (User) detailsActivityNavigationModel.user;
 
         txtMobile.setText(user.getMobile());
 
@@ -58,7 +53,7 @@ public class DetailsActivity extends AppCompatActivity {
     @OnClick(R.id.btn_click_me)
     public void onClickMeClicked(){
 
-        if(isSuccess){
+        if(detailsActivityNavigationModel.isSuccess){
             Toast.makeText(DetailsActivity.this, "Dart and Henson is really working!", Toast.LENGTH_SHORT).show();
         }
     }

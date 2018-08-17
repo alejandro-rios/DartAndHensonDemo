@@ -20,7 +20,8 @@ android {
 }
 
 dependencies {
-
+    // Module implementation
+    implementation project(':darthensondemo-navigation')
     implementation 'com.android.support:appcompat-v7:27.1.1'
 
     implementation 'com.f2prateek.dart:dart:3.0.1'
