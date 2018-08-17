@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -40,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         user.setMobile(edtMobile.getText().toString());
         user.setName(edtName.getText().toString());
 
-        Intent intent = Henson.with(MainActivity.this)
-                .gotoDetailsActivity()
+        // Replace Henson.with to HensonNavigator.goto...
+        Intent intent = HensonNavigator.gotoDetailsActivity(this)
                 .isSuccess(true)
                 .user(user)
                 .build();

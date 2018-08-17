@@ -54,7 +54,7 @@ public class DetailsActivity extends AppCompatActivity {
     public void onClickMeClicked(){
 
         if(detailsActivityNavigationModel.isSuccess){
-            Toast.makeText(DetailsActivity.this, "Dart and Henson is really working!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(DetailsActivity.this, "Dart and Henson 3 is working now!", Toast.LENGTH_SHORT).show();
         }
     }
 
